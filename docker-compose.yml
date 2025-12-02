@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+      - APP_ENV=docker
+      - RELEASE=v2.1
+      - JWT_SECRET=your_super_secret_jwt_key_change_this_in_production
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=admin123
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    restart: unless-stopped
+    networks:
+      - music-network
+
+networks:
+  music-network:
+    driver: bridge
+
+volumes:
+  uploads:
+  data:

@@ -1,0 +1,19 @@
+{
+  "name": "kube-lab-app",
+  "version": "2.0.0",
+  "description": "Mini Spotify-style web player with health, metrics, and lab routes",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.1"
+  }
+}
