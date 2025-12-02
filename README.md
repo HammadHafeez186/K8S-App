@@ -153,6 +153,41 @@ To extend the application:
 - **Database errors**: Ensure `data/` directory exists and is writable
 - **Authentication issues**: Verify JWT_SECRET environment variable
 
+## Kubernetes Deployment
+
+### Prerequisites
+- Docker Desktop with Kubernetes enabled, OR
+- Minikube installed and running
+
+### Deployment Steps
+
+1. **Build the Docker image:**
+   ```bash
+   docker build -t kube-lab-app:v1 .
+   ```
+
+2. **Deploy to Kubernetes:**
+   ```bash
+   kubectl apply -f k8s/
+   ```
+
+3. **Verify deployment:**
+   ```bash
+   kubectl get pods
+   kubectl get svc
+   ```
+
+4. **Access the application:**
+   ```bash
+   # The app will be available at http://localhost:30080
+   curl http://localhost:30080
+   ```
+
+5. **Clean up:**
+   ```bash
+   kubectl delete -f k8s/
+   ```
+
 ## Docker Commands
 
 ```bash
